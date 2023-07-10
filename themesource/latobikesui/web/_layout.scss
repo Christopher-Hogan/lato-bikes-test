@@ -1,0 +1,168 @@
+body {
+    font-family: $font-family-thin;
+}
+
+.lato-layout {
+    &.layout-atlas {
+        .region-topbar {
+            // box-shadow: none;
+            // background-color: transparent;
+            background-color: $bg-color-secondary;
+
+            .topbar-content {
+                min-height: 70px;
+                height: 70px;
+
+                .navbar-nav {
+                    a {
+                        color: #000;
+                        position: relative;
+                        transition: text-shadow 0.3s ease-in-out;
+
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            width: 0;
+                            height: 4px;
+                            background-color: $brand-inverse;
+                            transition: width 0.3s ease-in-out;
+                        }
+                    }
+                }
+
+                .mx-navbar ul.nav > .mx-navbar-item {
+                    margin-left: 20px;
+
+                    > a {
+                        &:hover, 
+                        &:focus {
+                            color: $brand-inverse;
+                            background-color: transparent;
+                            text-shadow: 0px 0px 1px #000;
+                            
+                            &:before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    
+                    &.active a {
+                        color: $brand-inverse;
+                        background-color: transparent;
+                        font-weight: bold;
+                        
+                        &:before {
+                            width: 100%;
+                        }
+                    }
+                    
+                    &.open > a {
+                        color: $brand-inverse;
+                        background-color: transparent;
+                    
+                        &:before {
+                            width: 100%;
+                        }
+
+                        &:hover, 
+                        &:focus {
+                            color: $brand-inverse;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+
+            .navbar-brand {
+                img {
+                    margin-right: 0;
+                    height: 40px;
+                }
+            }
+        }
+
+        .region-sidebar {
+            box-shadow: none;
+        }
+
+        .mx-scrollcontainer-push.mx-scrollcontainer-open > .mx-scrollcontainer-toggleable, 
+        .mx-scrollcontainer-slide.mx-scrollcontainer-open > .mx-scrollcontainer-toggleable {
+            box-shadow: 0 0 4px rgb(0 0 0 / 14%), 2px 4px 8px rgb(0 0 0 / 28%);
+        }
+    }
+}
+
+.first-landing-content-wrapper {
+    .row {
+        margin: 5% 0;
+
+        img {
+            padding: 8%;
+            padding-right: 0;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        span {  
+            max-width: 75%;
+            display: block;
+            font-size: 18px;
+        }
+    }
+}
+
+.second-landing-content-wrapper {
+    .row {
+        margin: 5% 0;
+
+        img {
+            padding: 8%;
+            padding-left: 0;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        span {  
+            max-width: 75%;
+            display: block;
+            font-size: 18px;
+        }
+    }
+}
+
+.full-width-wrapper {
+    background-color: #fff;
+    padding: 0 !important;
+    position: relative;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+
+    img {
+        position: absolute;
+        height: 50vh;
+        width: auto;
+        right: 0;
+        z-index: 1;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+    
+    span {        
+        font-size: 18px;
+    }
+
+    .container {
+        z-index: 2;
+    }
+}

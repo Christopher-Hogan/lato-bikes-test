@@ -1,0 +1,268 @@
+.showfloor-list {
+    ul {    
+        li {
+            // background: transparent !important;
+            // border: none !important;
+            // padding-top: 0px !important;
+
+            // .card {
+            //     margin-bottom: 0;
+            // }
+
+            .min-width {
+                min-width: 20vw;
+            }
+
+            // &:first-of-type {
+            //     border-top: none;
+            // }
+
+            // &:last-of-type {
+            //     border-bottom: none;
+            // }
+
+            &:hover,
+            &:focus {
+                background-color: $gray-primary;
+
+                .btn {
+
+                    background-color: $gray-primary;
+                }
+            }
+
+            img {
+                max-width: 100px;
+                object-fit: contain;
+                height: 50px;
+                object-position: left;
+                margin: 0;
+            }
+
+            .divider-card {
+                .col {
+                    border-right: 1px solid $gray-primary;
+                    padding: 10px 30px;
+                
+                    &:last-of-type {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mx-listview {
+    .selected {
+        span, 
+        h4, 
+        h3 {
+            color: #000;
+        }
+    }
+}
+
+.brand-list {
+    ul {
+        margin-bottom: 0;
+
+        li { 
+            background-color: #fff;
+            padding: 10px 10px;
+            cursor: pointer;
+
+            &.selected {
+                background: $gray-lighter;
+            }
+            
+            &:hover,
+            &:focus {
+                background-color: $gray-lighter;
+            }
+
+            .row {
+                .col {
+                    display: flex;
+                    align-items: center;
+
+                    &:last-of-type {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+
+            img {
+                object-fit: contain;
+                object-position: right;
+            }
+
+            &.selected {
+                span, 
+                h4, 
+                h3,
+                h5 {
+                    color: #000;
+                }
+                
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+}
+
+.part-list {
+    @extend .brand-list;
+
+    ul {
+        li {
+            &.selected {
+                img {
+                    filter: none;
+                }
+            }
+        }
+    }
+}
+
+.card {
+    &.filters {
+        .row {
+            &:first-of-type {
+                padding: 0 10px;
+            }
+        }
+    }
+}
+
+.product-main-img {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 20px;
+}
+
+.product-thumb-wrapper {
+    ul {
+        display: flex;
+        gap: 2%;
+        align-items: center;
+
+        li {
+            width: 32% !important;
+            height: auto !important;
+            cursor: pointer !important;
+
+            .product-thumb-img {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+    }
+}
+
+.card {
+    &--stock {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .col-center {
+            width: 48%;
+            padding: 10px;        
+            
+            img {
+                max-width: 200px;
+                max-height: 100px;
+            }
+
+            h2 {
+                font-size: 36px;
+            }
+
+            h5 {
+                font-family: 'Patron Regular';
+            }
+
+            &:first-of-type {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    width: 1px;
+                    height: 100%;
+                    background-color: $gray-light;
+                    position: absolute;
+                    right: -6%;
+                }
+            }
+        }
+    }
+
+    &--specifications {
+        img {
+            max-width: 100px;
+        }
+    }
+}
+
+.dashboard-wrapper {
+    .card {
+        h2 {
+            font-size: 40px;
+        }
+
+        span {
+            font-size: 16px;
+        }
+
+        img {
+            max-width: 160px;
+            max-height: 80px;
+            opacity: 0.8;
+        }
+    }
+}
+
+.btn {
+    &.white-icon {
+        padding: 15px;
+        img {
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+
+.translate-img {
+    width: 70px; 
+    margin: auto;
+}
+
+.card {
+    //box-shadow: 0 2px 6px 1px #ababab;
+    border: 1px solid rgba(#000,.15);
+}
+
+// in order for all of the chart to have the same height
+.no-bottom-margin {
+    margin-bottom: 16px;
+
+    .card {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .col {
+        display: flex;
+
+        // &:last-of-type {
+        //     display: block;
+        // }
+    }
+}
+
+.stat-divider {
+    border-right: solid 1px $border-color-default;
+}

@@ -1,0 +1,119 @@
+.product-chart {
+    .points {
+        .point {
+            // @for $i from 1 through 6 {
+            //     &:nth-child(#{$i}) {
+            //         path {
+            //             fill: rgba($brand-primary, (0.15*$i)) !important; 
+            //         }
+            //     }
+            // }
+            &:nth-child(1) {
+                path {
+                    fill: #8992A4 !important; 
+                }
+            }
+            &:nth-child(2) {
+                path {
+                    fill: #70798B !important; 
+                }
+            }
+            &:nth-child(3) {
+                path {
+                    fill: #576072 !important; 
+                }
+            }
+            &:nth-child(4) {
+                path {
+                    fill: #3D4658 !important; 
+                }
+            }
+            &:nth-child(5) {
+                path {
+                    fill: #242D3F !important; 
+                }
+            }
+            &:nth-child(6) {
+                path {
+                    fill: #0A1325 !important; 
+                }
+            }
+        }
+    }
+}
+
+.product-pie-chart {
+    .main-svg {
+        .infolayer {
+            .annotation { 
+                .annotation-text {
+                    fill: #333 !important;
+                }
+            }
+        }
+    }
+}
+
+#mxui_widget_ReactCustomWidgetWrapper_4 > div > div.js-plotly-plot > div > div > svg:nth-child(3) > g.infolayer > g:nth-child(3) > g > g > text {
+    font-weight: bold;
+    font-size: 1.7vw !important;
+    margin-bottom: 5px !important;
+}
+
+#mxui_widget_ReactCustomWidgetWrapper_4 > div > div.js-plotly-plot > div > div > svg:nth-child(3) > g.infolayer > g:nth-child(4) > g > g > text {
+    font-size: .8vw !important;
+}
+
+.quota-card {
+    position: relative;
+
+    .percentage-text {
+        position: absolute;
+        font-weight: bold;
+        color: $gray-dark;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+
+        top: 42px;
+        width: 118px;
+        height: 43px;
+        font-size: 60px;
+        line-height: 38px;    
+    }
+
+    .widget-progress-circle {
+        margin: auto;
+        display: block;
+        width: 53.5%;
+        
+        .widget-progress-circle-path {
+            stroke: #242D3F !important;
+        }
+    }
+}
+
+.widget-progress-bar {
+    &.progress-bar-primary {
+        .progress {
+            height: 40px;
+            background-color: $gray-lighter;
+            border-radius: 8px;
+
+            .progress-bar {
+                background-color: #242D3F;
+                color: #fff;
+                font-weight: bold;
+                height: 40px;
+                line-height: 39px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.js-plotly-plot .plotly, 
+.js-plotly-plot .plotly div {
+    font-family: 'Noto Sans', 'Arial', sans-serif !important;
+}

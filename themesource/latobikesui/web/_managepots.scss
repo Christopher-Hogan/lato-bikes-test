@@ -1,0 +1,387 @@
+$scaleFactor: 1.1;
+
+.manage-pot-page {
+    min-height: 100%;
+
+    .manage-pot-title-container {
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .widget-progress-bar {
+        .progress {
+            height: 14px;
+        }
+    }
+
+    .pots-selector-container {
+        border-right: 1px solid $gray-primary;
+        height: 100%;
+
+        .mx-listview {
+            ul {
+               li {
+                    transition: all .2s ease-in-out;
+                    cursor: pointer;
+                    transform-origin: right;                
+                    margin-bottom: 5px;
+                    border: none;
+                    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px 0px;
+                    width: 90%;
+
+                    .mx-dataview-content {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        span {
+                            background-color: #fff;
+    
+                            &:after {
+                                content: '';
+                                height: 4px;
+                                background-color: $brand-primary;
+                                width: 0;
+                                position: absolute;
+                                bottom: -15px;
+                                left: -15px;
+                            }
+    
+                            &.selected {
+                                color: $brand-primary;
+                                font-weight: 700;
+    
+                                &:after {
+                                    width: calc(100% + 30px);                        
+                                }
+                            }
+                        }
+    
+                        img {
+                            max-width: 26px;
+                            margin-right: 0;
+                        }
+                    }
+
+                    &:hover {
+                        transform: scaleX($scaleFactor);
+
+                        img {    
+                            transform: scaleX(1/$scaleFactor);
+                        }
+                    }
+
+                    &:focus {
+                        background-color: #fff;
+                    }
+                }
+            } 
+        }
+
+        &.manager-pot-selector {
+            .mx-listview {
+                ul {
+                   li {
+                       .mx-dataview-content {
+                            display: block;
+                            position: relative;
+
+                            img {
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                margin: auto;
+                                right: 0;
+                            }
+                       }
+                   }
+                }
+            }
+        }
+    }
+}
+
+.risk-text-low {
+    color: transparentize($brand-success, 0.4);
+}
+
+.risk-text-low-medium {
+    color: $brand-success;
+}
+
+.risk-text-medium {
+    color: $brand-warning;
+}
+
+.risk-text-medium-high {
+    color: transparentize($brand-danger, 0.4);
+}
+
+.risk-text-high {
+    color: $brand-danger;
+}
+
+.payment-detail-container {
+    .radio-three-flex {
+        .radio {
+            flex: 0 0 33%;
+        }
+    }
+    
+    .payment-types-radio {
+        margin: 10px 0;
+    
+        .radio {
+            padding: 0;
+    
+            input[type="radio"] {
+                display: none;
+            }
+    
+            &:first-of-type {
+               label {
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+               }
+            }
+            
+            &:last-of-type {
+                label {
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                }
+            }
+        }
+    
+        label {
+            padding: 30px 10px !important;
+            transition: all .2s ease-in-out;
+            margin: 0 !important;
+            position: relative;
+            text-align: center;
+
+            &::before {
+                content: '';
+                background-color: transparent;
+                border: 2px solid $brand-primary;
+                height: 80%;
+                width: 90%;
+                position: absolute;
+                top: 10%;
+                left: 5%;
+                opacity: 0;
+                transition: opacity .2s ease-in-out;
+            }
+        }
+    
+        label:hover {
+            &::before {
+                opacity: 0.5;
+            }
+        }
+    
+        input[type="radio"]:checked + label {
+            &::before {
+                opacity: 1;
+            }
+
+            &:after {
+                content: '';
+                background : url(../../../../resources/checked.svg) no-repeat;
+                height: 20px;
+                width: 20px;
+                position: absolute;
+                top: 4%;
+                right: 1%;
+                z-index: 2;
+            }
+        }
+    }
+    
+    label,
+    .form-group .control-label {
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        // font-weight: 700;
+        // margin-bottom: 5px !important;
+    }   
+
+    .card-small-text-container {
+        overflow: initial;
+        .form-control {
+            // max-width: 100px;
+        }
+        
+        &.flexcontainer {
+            align-items: center;
+
+            span {
+                font-weight: 700;
+                font-size: 20px;
+            }
+
+            .flexitem {
+                width: 49%;
+            }
+
+            .form-group {
+                &:first-of-type {
+                    //margin-right: 20px;
+                }
+
+                &:last-of-type {
+                    //margin-left: 20px;
+                }
+            }
+        }
+    }
+
+}
+
+.currency-textbox {
+    position: relative;
+
+    .form-control {
+        padding-left: 30px;
+    }
+
+    &::before {
+        content: '$';
+        position: absolute;
+        left: 12px;
+        bottom: 10px;
+        font-size: 22px;
+    }
+}
+
+.self-managed-options {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .btn {
+        max-width: 200px;
+        min-width: auto;
+        border-radius: 50px;
+        
+        &:first-of-type {
+            margin-right: 20px;
+        }
+    }
+}
+
+.investments-list {
+    width: 100%;
+
+    ul {
+        li {
+            padding: 15px 0;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: transparent;
+            }
+
+            .fund-actions {
+                .btn-primary {
+                    img {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fund-container-wrapper {
+    ul {
+        li {
+            .fund-container {
+                padding: 15px 0;
+                border-bottom: 1px solid $gray-lighter;
+            
+                .form-group {
+                    margin: 0;
+                }
+            }
+            
+            &:first-of-type {
+                .fund-container {
+                border-top: 1px solid $gray-lighter;
+                }
+            }
+
+            &.mx-listview-empty {
+                padding: 10px;
+                background-color: $gray-lighter;
+
+                label {
+                    display: none;
+                }
+
+                &:after {
+                    content: 'No funds selected';
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.card {
+    &.fund-select-container {
+        position: relative;
+        transition: all .2s ease-in-out;
+        border-width: 2px;
+
+        &:hover {
+            border-color: $brand-primary;
+        }
+
+        &.risk-pot-low {
+            border-left-color: transparentize($brand-success, 0.4);
+            border-left-width: 4px;
+        }
+        
+        &.risk-pot-low-medium {
+            border-left-color: $brand-success;
+            border-left-width: 4px;
+        }
+        
+        &.risk-pot-medium {
+            border-left-color: $brand-warning;
+            border-left-width: 4px;
+        }
+        
+        &.risk-pot-medium-high {
+            border-left-color: transparentize($brand-danger, 0.4);
+            border-left-width: 4px;
+        }
+        
+        &.risk-pot-high {
+            border-left-color: $brand-danger;
+            border-left-width: 4px;
+        }
+    }
+}
+
+.total-calculations {
+    border-bottom: 1px solid $gray-light;
+    padding: 0 0 15px 20px;
+    margin-bottom: 15px;
+}
+
+.investment-highlighter {
+    width: 100%;
+    background-color: transparentize($brand-warning, 0.5);
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mx-listview.list-columns ul li {
+    max-width: inherit;
+    flex: auto;
+}

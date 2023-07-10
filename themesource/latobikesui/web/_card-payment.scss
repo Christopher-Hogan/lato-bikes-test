@@ -1,0 +1,146 @@
+@mixin gradient-card {
+    background: $brand-inverse;
+    background: -moz-linear-gradient(90deg, $brand-inverse 0%, $brand-info 100%);
+    background: -webkit-linear-gradient(90deg, $brand-inverse 0%, $brand-info 100%);
+    background: linear-gradient(90deg, $brand-inverse 0%,  $brand-info 100%);
+}
+
+/*--------------------
+Credit Card
+--------------------*/
+.credit-card-box {
+    max-width: 350px;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    // text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+    // box-shadow: 0 1px 6px hsla(0, 0, 0, 0.3);
+    @include gradient-card;
+    //background-color: $brand-info;
+    color: #fff;
+    border-radius: 15px;
+  
+    .logo {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 65px;
+      height: 40px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &.visa{
+        background-image: url('../../../../resources/cards/visa.svg');
+      }
+
+      &.amex{
+        background-image: url('../../../../resources/cards/amex.svg');
+        filter: brightness(0) invert(1);
+      }
+
+      &.maestro{
+        background-image: url('../../../../resources/cards/maestro.svg');
+      }
+
+      &.mastercard{
+        background-image: url('../../../../resources/cards/mastercard.svg');
+      }
+    }
+    
+    .chip {
+      position: absolute;
+      width: 60px;
+      height: 45px;
+      top: 40px;
+      left: 20px;
+      background: linear-gradient(135deg, hsl(269,54%,87%) 0%,hsl(200,64%,89%) 44%,hsl(18,55%,94%) 100%);;
+      border-radius: 8px;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 4px solid hsla(0, 0, 50, .1);
+        width: 80%;
+        height: 70%;
+        border-radius: 5px;
+      }
+    }
+  
+    .strip {
+      background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      top: 30px;
+      left: 0;
+    }
+  
+    .number {
+      position: absolute;
+      margin: 0 auto;
+      top: 100px;
+      left: 19px;
+      font-size: 25px;
+    }
+  
+    label {
+        font-size: 14px;
+        color: #fff !important;
+        letter-spacing: 1px;
+        text-shadow: none;
+        text-transform: uppercase;
+        font-weight: normal;
+        opacity: 0.5;
+        display: block;
+        margin-bottom: 3px;
+    }
+  
+    .card-holder,
+    .card-expiration-date {
+      position: absolute;
+      margin: 0 auto;
+      top: 145px;
+      left: 19px;
+      font-size: 18px;
+      text-transform: capitalize;
+    }
+  
+    .card-expiration-date {
+      text-align: right;
+      left: auto;
+      right: 20px;
+    }
+      
+      div[class*="enumClass"]{
+          display: none;
+      }
+  
+    .ccv {
+      height: 36px;
+      border-radius: 5px;
+      top: 70px;
+      color: #fff;
+      left: 0;
+      right: 10px;
+      position: absolute;
+      margin: 0 auto;
+      text-align: right;
+      padding: 8px;
+
+      label {
+        margin: -30px 0 14px;
+        color: #fff;
+        opacity: 0.5;
+      }
+    }
+}
+  

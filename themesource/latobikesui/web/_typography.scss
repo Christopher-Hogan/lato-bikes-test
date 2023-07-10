@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "Patron Bold";
+    src: url("../../../resources/fonts/PatronWEB-Bold.woff") format("woff2"), url("../../../resources/fonts/PatronWEB-Bold.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: "Patron Italic";
+    src: url("../../../resources/fonts/PatronWEB-Italic.woff") format("woff2"), url("../../../resources/fonts/PatronWEB-Italic.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: "Patron Medium";
+    src: url("../../../resources/fonts/PatronWEB-Medium.woff") format("woff2"), url("../../../resources/fonts/PatronWEB-Medium.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: "Patron Regular";
+    src: url("../../../resources/fonts/PatronWEB-Regular.woff") format("woff2"), url("../../../resources/fonts/PatronWEB-Regular.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: "Patron Thin";
+    src: url("../../../resources/fonts/PatronWEB-Thin.woff") format("woff2"), url("../../../resources/fonts/PatronWEB-Thin.woff") format("woff");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: 'Patron Bold', 'Open Sans', 'Arial', sans-serif;
+    margin: 0;
+  }
+
+  h1, .h1, .h1>* {
+    font-size: 3rem;
+}

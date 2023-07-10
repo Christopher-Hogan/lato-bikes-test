@@ -1,0 +1,39 @@
+.t-main {
+    .lato-wizard-wrapper {
+        ._15-U2dbrbnL2z7CfSzO9Yd {
+            display: none;
+        }
+    }
+
+    .animated-textbox {
+        label {
+            display: none;
+        }
+    }
+
+    .video-wrapper {
+        height: auto;
+        min-height: 500px;
+
+        .video-player-container {
+            min-height: 500px;
+        }
+
+        &::before {            
+            height: auto;
+        }
+
+        img {
+            height: auto;
+        }
+    }
+
+    .full-width-wrapper {
+        height: auto;
+        overflow: hidden;
+
+        img {
+            height: auto;
+        }
+    }
+}

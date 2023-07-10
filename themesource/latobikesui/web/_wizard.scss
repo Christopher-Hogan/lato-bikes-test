@@ -1,0 +1,134 @@
+.checkout-wrapper {
+    .wizard {
+        padding: 0 15px;
+        margin-bottom: 80px;
+
+        .wizard-step {
+            height: 0;
+            height: 20px;
+            background: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            
+            a {
+                width: 60px;
+                text-overflow: initial;
+                padding: 0;
+                text-align: center;
+                overflow: inherit;
+                margin: auto;
+                white-space: inherit;
+                margin-top: 5px;
+                font-weight: 100;
+                cursor: default;
+
+                &:hover,
+                &:focus {
+                    color: #0a1325;
+                    text-decoration: none;
+                }
+            }
+
+            &:before,
+            &:after {
+                content: none;
+            }
+
+            &::before {
+                content: '';
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                border: none;
+                margin: auto;
+                left: 40px;
+                z-index: 1;
+                border-top: 1px dashed #848484;
+                
+                @media (min-width: 768px) {
+                    left: 50%;
+                }
+            }
+
+            .wizard-step-circle {
+                width: 20px;
+                height: 20px;
+                background-color: #fff;
+                border: 1px solid $gray;
+                margin: auto;
+                border-radius: 50%;
+                position: relative;
+                z-index: 2;
+
+                &::before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: $gray;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    left: 0;
+                    right: 0;
+                }
+            }
+
+            &.wizard-step-active {
+                a {
+                    color: $brand-primary;
+                }
+
+                .wizard-step-circle {
+                    border-color: $brand-primary;
+    
+                    &::before {
+                        background-color: $brand-primary;
+                    }
+                }
+            }
+
+            &.wizard-step-visited {
+                a {
+                    color: #000;
+                }
+
+                .wizard-step-circle {
+                    border-color: #000;
+                    background-color: #000;
+    
+                    &::before {
+                        content: none;
+                    }
+
+                    &::after {
+                        content: '';
+                        display: inline-block;
+                        transform: rotate(45deg);
+                        height: 13px;
+                        width: 6px;
+                        border-bottom: 2px solid #fff;
+                        border-right: 2px solid #fff;
+                        right: 0;
+                        left: 0;
+                        position: absolute;
+                        top: -3px;
+                        bottom: 0;
+                        margin: auto;
+                    }
+                }
+            }
+
+            &:last-of-type {
+                &:before {
+                    content: none;
+                }
+            }
+        }
+    }
+}

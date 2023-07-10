@@ -1,0 +1,145 @@
+/* Colors */
+$color-Grey800: #333333;
+$color-Grey700: #3a3a3a;
+$color-Grey600: #646464;
+$color-Grey500: #888888;
+$color-Grey500A: #b3b3b3;
+$color-Grey400: #d8d8d8;
+$color-Grey300: #eaeaea;
+$color-Grey200: #f2f2f2;
+$color-Grey100: #fafafa;
+$color-White100: #c4c4c4;
+// #FFED03
+$color-Blue: #0B1325;
+$color-Red: #d25c5c;
+$color-bg-white: #ffffff;
+$color-bg-grey: #e5e5e5;
+
+@mixin filter-Grey500() {
+	filter: invert(59%) sepia(0%) saturate(0%) hue-rotate(136deg) brightness(92%) contrast(78%);
+}
+
+@mixin filter-Blue() {
+	filter: invert(31%) sepia(59%) saturate(5685%) hue-rotate(226deg) brightness(87%) contrast(108%);
+}
+
+@mixin filter-Grey700() {
+	filter: invert(18%) sepia(0%) saturate(86%) hue-rotate(139deg) brightness(92%) contrast(82%);
+}
+
+/* Fonts */
+@mixin font-h0() {
+	font: normal 600 20px/24px;
+	text-transform: uppercase;
+}
+
+@mixin font-h1() {
+	font: normal 600 20px/24px;
+}
+
+@mixin font-h2() {
+	font: normal 600 18px/22px;
+}
+
+@mixin font-p1() {
+	font: normal 600 16px/19px;
+}
+
+@mixin font-p2() {
+	font: normal 600 14px/17px;
+}
+
+@mixin font-p3() {
+	font: normal normal 14px/17px;
+}
+@mixin font-p4() {
+	font: normal 400 14px/17px;
+}
+@mixin font-c1() {
+	font: normal normal 14px/20px;
+}
+
+@mixin font-s1() {
+	font: normal normal 12px/15px;
+}
+
+@mixin font-s2() {
+	font: normal 600 12px/15px;
+}
+
+@mixin font-s3() {
+	font: normal normal 8px/10px;
+}
+
+// @font-face {
+// 	font-family: "Noto Sans";
+// 	font-style: normal;
+// 	font-weight: 400;
+// 	src: url("../../css/fonts/NotoSans-Regular.ttf");
+// }
+// @font-face {
+// 	font-family: "Noto Sans";
+// 	src: url("../../css/fonts/NotoSans-Regular.ttf");
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: "Inter";
+// 	font-style: normal;
+// 	font-weight: 400;
+// 	src: url("../../css/fonts/Inter-Regular.ttf");
+// }
+
+// @font-face {
+// 	font-family: "Inter";
+// 	font-style: normal;
+// 	font-weight: 600;
+// 	src: url("../../css/fonts/Inter-SemiBold.ttf");
+// }
+
+/* helpers */
+
+@mixin radio-mixin($outer-size, $inner-size) {
+	position: relative;
+	width: $outer-size;
+	height: $outer-size;
+	border: 1px solid $color-Grey600;
+	border-radius: 100px;
+	display: block;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	appearance: none;
+
+	&:after {
+		content: " ";
+		position: absolute;
+		width: $inner-size;
+		height: $inner-size;
+		left: $outer-size - $inner-size;
+		top: $outer-size - $inner-size;
+		display: table;
+		background-color: $color-Blue;
+		transition: all 0.3s ease;
+		border-radius: 100px;
+		border-top: 0;
+		border-left: 0;
+		opacity: 0;
+	}
+
+	&:checked:after {
+		opacity: 1;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+@mixin hover-mixin() {
+	transition: all 0.3s;
+
+	&:hover {
+		box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+	}
+}

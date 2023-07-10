@@ -1,0 +1,118 @@
+$anim-speed: 500ms;
+
+.showfloor-list {
+    li {
+        background: transparent !important;
+        border: none !important;
+        padding-top: 0px !important;
+        opacity: 0;
+        animation: card-in $anim-speed linear;
+        animation-fill-mode: forwards;
+        animation-delay: 1000ms;
+        padding: 10px;
+
+        @for $i from 1 through 9 {
+            &:nth-child(#{$i}) {
+                animation-delay: $i * 300ms;
+            }
+        }
+
+        .card {
+            // margin-bottom: 0;
+        }
+
+        img {
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+}
+
+.layout-atlas .toggle-btn>.glyphicon {
+    font-size: 25px;
+    color: #000;
+}
+
+.btn-rounded{
+    border-radius: 50px;
+}
+
+.stat-divider {
+    border-right: solid 1px $border-color-default;
+}
+
+.stat-divider-bottom {
+    border-bottom: solid 1px $border-color-default;
+}
+
+.stats {
+    h1,h2,h3,h4,h5 {
+        margin: 0;
+    }
+}
+
+@keyframes card-in {
+    0% {
+      opacity: 0;
+      top: 100px;
+    }
+    100% {
+      opacity: 1;
+      top: 0px;
+    }
+}
+
+.features-wrapper {    
+    border-top: 1px solid $border-color-default;
+    padding-top: 15px;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    h3 {
+        margin-bottom: 10px;
+        flex: 100%;
+    }
+
+    .feature {
+        border: 1px solid $border-color-default;
+        border-radius: 4px;
+        padding: 10px;
+        flex: 0 48%;
+        display: flex;
+
+        span {
+            align-self: center;
+            text-align: center;
+            font-family: $font-family-base;
+        }
+    }
+}
+
+.checkout-wrapper {
+    @media (min-width: 768px) {
+        padding: 0 !important;
+        
+        .card {
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+
+        .row {
+            margin: 0 !important;
+
+            .col-lg-9 {
+                padding: 24px;
+            }
+    
+            .col-lg-3 {
+                border-left: 1px solid $gray-light;
+                padding: 24px;
+                min-height: calc(100vh - 70px);
+            }
+        }
+    }
+}

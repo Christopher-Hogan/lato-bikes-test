@@ -1,0 +1,31 @@
+.fade-in {
+    transform: translateY(40vh);
+    visibility: hidden;
+    transition: opacity 1200ms ease-out, transform 600ms ease-out, visibility 1200ms ease-out;
+    will-change: opacity, transform;
+
+    &.appear {
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+    }
+}
+  
+.from-left {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.from-left {
+    transition: opacity 250ms ease-in, -webkit-transform 800ms ease-in;
+    transition: opacity 250ms ease-in, transform 800ms ease-in;
+    transition: opacity 250ms ease-in, transform 800ms ease-in,
+        -webkit-transform 800ms ease-in;
+    opacity: 0;
+
+    &.appear {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,306 @@
+.notification-wrapper {
+    height: calc(100vh - 48px) !important;
+
+    &.modal-dialog.fullscreen {
+        padding: 0;
+        width: 95vw;
+        right: 0 !important;
+        left: auto !important;
+        animation: slide-right 0.6s;
+        top: 48px !important;
+
+        @media only screen and (min-width: 501px) {
+            width: 500px !important;
+        }
+
+        .modal-content {
+            border: 0;
+            border-radius: 0;
+            background-color: $topbar-bg;
+            overflow: auto;
+            width: 100%;
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+            height: calc(100vh - 48px) !important;
+
+            .padding-container {
+                padding: 16px 16px 0;
+            }
+
+            h5 {
+                font-size: 16px;
+                line-height: 24px;
+                color: #fff;
+                margin-bottom: 16px;
+            }
+
+            span,
+            h6 {
+                color: #fff;
+            }
+
+            .tabs-wrapper {
+                position: relative;
+
+                .btn-more {
+                    background-color: transparent;
+                    padding: 0;
+                    color: #fff;
+                    border: none;
+                    font-size: 20px;
+                    position: absolute;
+                    right: 16px;
+                    top: 5px;
+
+                    &:hover,
+                    &:focus {
+                        background-color: transparent;
+                    }
+                }
+
+                .mx-tabcontainer {
+                     .mx-tabcontainer-tabs {
+                        border-color: $gray-light;
+                        padding: 0 16px;
+                        margin-bottom: 0;                    
+
+                        li {
+                            margin-right: 20px;
+
+                            a {
+                                padding: 0 0 10px 0;
+                                border: none;
+                                outline: none;
+                                color: $gray-light;
+
+                                .mx-tabcontainer-badge {
+                                    background-color: transparent;
+                                    position: relative;
+                                    color: $gray-light;
+                                    transition: all 0.2s ease-in-out;
+
+                                    &::before {
+                                        content: '(';
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        bottom: 0;
+                                        margin: auto;
+                                        display: flex;
+                                        align-items: center;
+                                        color: $gray-light;
+                                        transition: all 0.2s ease-in-out;
+                                    }
+
+                                    &::after {
+                                        content: ')';
+                                        position: absolute;
+                                        right: 0;
+                                        top: 0;
+                                        bottom: 0;
+                                        margin: auto;
+                                        display: flex;
+                                        align-items: center;
+                                        color: $gray-light;
+                                        transition: all 0.2s ease-in-out;
+                                    }
+                                }
+                                
+                                &:hover,
+                                &:focus {
+                                    color: #fff;
+                                    background-color: transparent;
+                                    border: none;
+
+                                    .mx-tabcontainer-badge {
+                                        color: #fff;
+
+                                        &::before,
+                                        &::after {
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.active {
+                                a {
+                                    color: #fff;
+                                    border: none;
+                                    border-bottom: 1px solid #fff;
+
+                                    &:hover,
+                                    &:focus {
+                                        color: #fff;
+                                        border: none;
+                                        border-bottom: 1px solid #fff;
+                                    }
+                                    
+                                    .mx-tabcontainer-badge {
+                                        color: #fff;
+
+                                        &::before,
+                                        &::after {
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                     }
+                }
+
+                .mx-tabcontainer-content {
+                    .tab-content-header {
+                        padding: 16px ;
+                    }
+                }
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .mx-placeholder {
+                height: 100%;
+
+                >.mx-dataview {
+                    height: 100%;
+                }
+            }
+
+            .modal-body {
+                overflow: visible;
+            }
+
+            .mx-dataview {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+
+                .mx-dataview-content {
+                    flex: 1;
+                    padding-top: 0 !important;
+                    height: auto !important;
+                    overflow: visible !important;
+                }
+
+                .mx-dataview-controls {
+                    display: block;
+                }
+            }
+        }
+
+        .modal-header {
+            border: 0;
+            width: 100%;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+
+            h4 {
+                display: none;
+            }
+        }
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        right: -375px;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+.notification-list-wrapper {
+    li {
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+        &:first-of-type {            
+            border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+
+        &.mx-navigationlist-item {
+            .notification-item-wrapper {
+                display: flex;
+            
+                img {
+                    width: 40px;
+                    height: 40px;
+                    padding: 8px;
+                    border-radius: 8px;
+                    margin-right: 16px;
+                    background-color: $brand-inverse;
+                    // filter: brightness(0) invert(1);
+
+                    &.profile-pic {
+                        padding: 0;
+                        background-color: transparent;
+                        border-radius: 50%;
+                    }
+                }
+            
+                span {
+                    font-size: 12px;
+                    color: #fff;
+                    opacity: .8;
+
+                    &.text-small {
+                        opacity: .5;
+                        font-size: 11px !important;
+                        margin-top: 6px;
+                    }
+                }
+            
+                h6 {
+                    font-size: 14px;
+                }
+
+                .app-wrapper {
+                    padding: 4px;
+                    border-radius: 4px;
+                    background: rgba(255, 255, 255, 0.2);
+                    display: flex;
+                    margin-top: 6px;
+                    align-items: center;
+
+                    img {
+                        background: none;
+                        padding: 0;
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 50%;
+                        margin-right: 8px;
+                    }
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &:hover,
+            &:focus,
+            &.active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &.notification-new-wrapper {
+        li {
+            background-color: $navsidebar-bg-hover;
+
+            &:hover,
+            &:focus,
+            &.active {
+                background-color: $navsidebar-bg-hover;
+            }
+        }
+    }
+}

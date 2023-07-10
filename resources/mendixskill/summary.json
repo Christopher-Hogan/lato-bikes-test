@@ -1,0 +1,24 @@
+{
+  "session": {
+    "sessionId": "SessionId.14695cf9-0f07-4ebb-8b2c-91d4b64573ab",
+    "application": {
+      "applicationId": "amzn1.ask.skill.00ca4e5e-1815-493e-b11b-05e900972dbb"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AEE5BYHTAZZ6ZOUI2IR5UTTIUUZUNW4CKK57XPP5HTLBMCCJZAQJ4O5RKOPN2XRGTN36FL63M6ESVHWQTPKKRHUPM6NFYZLX3L4IZDZJ6R2BERU7RYRDBHNED75FNDQ4U77F7MM3DZCZSVFHA5TBYM6K2FR2WZH7RM6BHFQYMULFLTIFKNT2M6QRCJNWWUHKVZF3NXMC5OKLMAA"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.35213389-9d13-4a5c-922c-6221c8119a8b",
+    "locale": "en-US",
+    "timestamp": "2017-02-19T22:55:34Z",
+    "intent": {
+      "name": "MendixSummaryIntent",
+      "slots": {}
+    }
+  },
+  "version": "1.0"
+}
